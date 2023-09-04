@@ -16,8 +16,20 @@ class Product {
         $this->typology = $typology;
     }
 
-    public function getProduct() {
-        return $this->title.' '.$this->image.' '.$this->price.' '.$this->category.' '.$this->typology;
+    public function getTitle() {
+        return $this->title;
+    }
+    public function getImage() {
+        $this->image;
+    }
+    public function getPrice() {
+        $this->price;
+    }
+    public function getCategory() {
+        $this->category;
+    }
+    public function getTypology() {
+        $this->typology;
     }
 }
 class DogGame extends Product {
