@@ -25,14 +25,16 @@ $products = [$ball, $biscuits, $dogHouse, $woolBall, $wetFood, $box]
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
-    <h1> Animal Store</h1>
-    <div>
+    <h1 class="text-center">Animal Store</h1>
+    <div class="container-sm">
+        <div class="card">
         <?php 
         foreach ($products as $singleProduct) {
             foreach ($singleProduct as $key=> $value) {
                 echo $key.' '.$value.'<br>';
             }
         } ?>
+        </div>
     </div>
 </body>
 </html>
