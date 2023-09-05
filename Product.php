@@ -4,19 +4,16 @@ class Product {
     public $image;
     public $title;
     public $price;
-    public $category;
     public $typology;
 
     public function __construct(string $image, 
     string $title, 
     float $price, 
-    string $category, 
     string $typology)
     {
         $this->image = $image;
         $this->title = $title;
         $this->price = $price;
-        $this->category = $category;
         $this->typology = $typology;
 
         if ($price > 0 ) {
@@ -27,20 +24,26 @@ class Product {
     } 
 }
 class DogGame extends Product {
-
-}
-class DogFood extends Product {
-
-}
-class DogBed extends Product {
-
+    use DogCategory;
 }
 class CatGame extends Product {
-
+    use CatCategory;
+}
+class DogFood extends Product {
+    use DogCategory;
 }
 class CatFood extends Product {
-
+    use CatCategory;
+}
+class DogBed extends Product {
+    use DogCategory;
 }
 class CatBed extends Product {
-
+    use CatCategory;
+}
+trait DogCategory {
+    public $icon = '🐶';
+}
+trait CatCategory {
+    public $icon = '🐱';
 }

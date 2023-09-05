@@ -2,18 +2,17 @@
 require_once __DIR__ .'/Product.php';
 try {
     $ball = new DogGame('https://www.shoppypet.com/5455-large_default/ferplast-pa-6060-pallina-per-cani-in-vinile.jpg',
-'Ball', 22, '🐶', 'Game');
+'Ball', 22, 'Game');
 $biscuits = new DogFood('https://www.amicipappagalli.it/wp-content/uploads/2017/11/L625.jpg',
-'Dog Biscuits', 33, '🐶', 'Food');
+'Dog Biscuits', 33, 'Food');
 $dogHouse = new DogBed('https://m.media-amazon.com/images/I/61uVwT57rQL._AC_UF894,1000_QL80_.jpg',
-'DogBed',44,'🐶','Bed');
-
+'DogBed',44,'Bed');
 $woolBall = new CatGame('https://img.pixers.pics/pho_wat(s3:700/FO/40/14/75/32/700_FO40147532_7ca99d8dbe7f8bf8c5db673be9df60b4.jpg,700,464,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,414,jpg)/carte-da-parati-gomitolo-di-lana.jpg.jpg',
-'Wool Ball',4.50,'🐱','Game');
+'Wool Ball',4.50,'Game');
 $wetFood = new CatFood('https://www.naturepetshop.it/wp-content/uploads/leonardo-fegato-400-gr-lattine.jpg',
-'Wet Food',20,'🐱','Food');
+'Wet Food',20,'Food');
 $box = new CatBed('https://www.infopackaging.it/wp-content/uploads/2018/08/RM_20141001_M0U9635.jpg',
-'Box',34.99,'🐱','Bed');
+'Box',34.99,'Bed');
 } catch (Exception $e) {
     echo $e->getMessage();
 } 
@@ -47,7 +46,7 @@ $products = [$ball, $biscuits, $dogHouse, $woolBall, $wetFood, $box]
                     </div>
                     <div class="card-body">
                         <?php echo 'Price:€'.' '.number_format($singleProduct->price, 2).'<br>'; ?>
-                        <?php echo 'Category:'.' '.$singleProduct->category.'<br>'; ?>
+                        <?php echo 'Category:'.' '.$singleProduct->icon.'<br>'; ?>
                         <?php echo 'Typology:'.' '.$singleProduct->typology; ?>
                     </div>
                 </div>
