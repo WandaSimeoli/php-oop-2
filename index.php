@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ .'/Product.php';
-$ball = new DogGame('https://www.shoppypet.com/5455-large_default/ferplast-pa-6060-pallina-per-cani-in-vinile.jpg',
+try {
+    $ball = new DogGame('https://www.shoppypet.com/5455-large_default/ferplast-pa-6060-pallina-per-cani-in-vinile.jpg',
 'Ball', 22, '🐶', 'Game');
 $biscuits = new DogFood('https://www.amicipappagalli.it/wp-content/uploads/2017/11/L625.jpg',
 'Dog Biscuits', 33, '🐶', 'Food');
@@ -13,6 +14,10 @@ $wetFood = new CatFood('https://www.naturepetshop.it/wp-content/uploads/leonardo
 'Wet Food',20,'🐱','Food');
 $box = new CatBed('https://www.infopackaging.it/wp-content/uploads/2018/08/RM_20141001_M0U9635.jpg',
 'Box',34.99,'🐱','Bed');
+} catch (Exception $e) {
+    echo $e->getMessage();
+} 
+
 
 $products = [$ball, $biscuits, $dogHouse, $woolBall, $wetFood, $box]
 ?>
@@ -41,7 +46,7 @@ $products = [$ball, $biscuits, $dogHouse, $woolBall, $wetFood, $box]
                         <img src="<?php echo $singleProduct->image; ?>" alt="" class="w-50">
                     </div>
                     <div class="card-body">
-                        <?php echo 'Price:€'.' '.$singleProduct->price.'<br>'; ?>
+                        <?php echo 'Price:€'.' '.number_format($singleProduct->price, 2).'<br>'; ?>
                         <?php echo 'Category:'.' '.$singleProduct->category.'<br>'; ?>
                         <?php echo 'Typology:'.' '.$singleProduct->typology; ?>
                     </div>

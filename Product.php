@@ -7,30 +7,24 @@ class Product {
     public $category;
     public $typology;
 
-    public function __construct($image, $title, $price, $category, $typology)
+    public function __construct(string $image, 
+    string $title, 
+    float $price, 
+    string $category, 
+    string $typology)
     {
         $this->image = $image;
         $this->title = $title;
         $this->price = $price;
         $this->category = $category;
         $this->typology = $typology;
-    }
 
-    public function getTitle() {
-        return $this->title;
-    }
-    public function getImage() {
-        $this->image;
-    }
-    public function getPrice() {
-        $this->price;
-    }
-    public function getCategory() {
-        $this->category;
-    }
-    public function getTypology() {
-        $this->typology;
-    }
+        if ($price > 0 ) {
+        $this->price = $price; }
+        else {
+            throw new Exception('Prezzo non valido');
+        }
+    } 
 }
 class DogGame extends Product {
 
