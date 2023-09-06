@@ -1,11 +1,12 @@
 <?php
-
+// Classe prodotto
 class Product {
     public $image;
     public $title;
     public $price;
     public $typology;
 
+    // Costruttore
     public function __construct(string $image, 
     string $title, 
     float $price, 
@@ -16,6 +17,7 @@ class Product {
         $this->price = $price;
         $this->typology = $typology;
 
+        // Exception sul prezzo 
         if ($price > 0 ) {
         $this->price = $price; }
         else {
@@ -23,6 +25,8 @@ class Product {
         }
     } 
 }
+
+// Estensioni della classe prodotto 
 class DogGame extends Product {
     use DogCategory;
 }
@@ -41,6 +45,7 @@ class DogBed extends Product {
 class CatBed extends Product {
     use CatCategory;
 }
+// Traits con la categoria 
 trait DogCategory {
     public $icon = '🐶';
 }

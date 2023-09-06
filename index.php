@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ .'/Product.php';
+// Istanze della classe prodotto con il try-catch 
 try {
     $ball = new DogGame('https://www.shoppypet.com/5455-large_default/ferplast-pa-6060-pallina-per-cani-in-vinile.jpg',
 'Ball', 22, 'Game');
@@ -17,7 +18,7 @@ $box = new CatBed('https://www.infopackaging.it/wp-content/uploads/2018/08/RM_20
     echo $e->getMessage();
 } 
 
-
+// Array di prodotti per il ciclo foreach 
 $products = [$ball, $biscuits, $dogHouse, $woolBall, $wetFood, $box]
 ?>
 <!DOCTYPE html>
@@ -32,6 +33,7 @@ $products = [$ball, $biscuits, $dogHouse, $woolBall, $wetFood, $box]
     <h1 class="text-center">Animal Store</h1>
     <div class="container-sm">
         <div class="row">
+            <!-- Cards -->
         <?php 
         foreach($products as $singleProduct) { ?>
             <div class="col-3 text-center">
